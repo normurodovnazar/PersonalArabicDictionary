@@ -53,17 +53,19 @@ android {
 
 dependencies {
 
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 
-    val room_version = "2.6.0"
+    val roomVersion = "2.6.0"
 
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
 
     // To use Kotlin annotation processing tool (kapt)
-    ksp("androidx.room:room-compiler:$room_version")
+    ksp("androidx.room:room-compiler:$roomVersion")
     // To use Kotlin Symbol Processing (KSP)
-    ksp("androidx.room:room-compiler:$room_version")
+    ksp("androidx.room:room-compiler:$roomVersion")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
