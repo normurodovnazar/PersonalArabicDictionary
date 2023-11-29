@@ -15,7 +15,6 @@ class MainActivity : ComponentActivity() {
         setContentView(bind.root)
 
         val db = Room.databaseBuilder(this,AppDatabase::class.java,"name").build()
-        val wordDao: WordDao = db.wordDao()
 
     }
 }
