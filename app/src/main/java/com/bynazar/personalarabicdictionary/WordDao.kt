@@ -11,8 +11,8 @@ interface WordDao {
     @Query("SELECT * FROM Word")
     fun getAll(): List<Word>
 
-    @Query("SELECT * FROM Word WHERE original LIKE :original")
-    fun findByName(original: String): Word
+    @Query("SELECT * FROM Word WHERE original LIKE '%' || :original || '%'")
+    fun findByOriginal(original: String): List<Word>
 
     @Insert
     fun insertAll(vararg words: Word)

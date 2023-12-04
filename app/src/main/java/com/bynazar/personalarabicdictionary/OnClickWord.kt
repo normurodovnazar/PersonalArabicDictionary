@@ -1,5 +1,5 @@
 package com.bynazar.personalarabicdictionary
 
 interface OnClickWord {
-    fun onClick(position: Int,word: Word,action: Action)
+    fun onClick(word: Word,action: Action)
 }

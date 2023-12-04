@@ -6,7 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Word(
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo("original") val original: String,
     @ColumnInfo("arabic") val arabic: String
-)
+){
+    constructor(original: String,arabic: String): this(0,original,arabic)
+}

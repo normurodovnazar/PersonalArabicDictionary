@@ -4,20 +4,94 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:focusable="auto"
+        android:focusableInTouchMode="true"
+        android:id="@+id/main"
+        android:visibility="visible"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/add"
-        android:src="@drawable/add"
-        android:padding="2dp"
-        android:layout_margin="10dp"
-        android:background="@drawable/button_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="60dp"
-        android:layout_height="60dp"/>
+        <EditText
+            android:textColor="@color/black"
+            android:id="@+id/search"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="10dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:hint="@string/search"
+            app:layout_constraintBottom_toTopOf="@id/list"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/button_not_pressed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="TODO"
+            android:autofillHints="" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list"
+            app:layout_constraintTop_toBottomOf="@id/search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <ImageButton
+            android:id="@+id/add"
+            android:src="@drawable/add"
+            android:padding="2dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:importantForAccessibility="no" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/adding"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:textColor="@color/black"
+            android:id="@+id/original"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="10dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:hint="@string/hint_original"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/button_not_pressed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="TODO"
+            android:autofillHints="" />
+        <EditText
+            android:textColor="@color/black"
+            android:id="@+id/arabic"
+            android:background="@drawable/button_not_pressed"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="10dp"
+            android:layout_marginVertical="20dp"
+            android:hint="@string/hint_arabic"
+            app:layout_constraintStart_toStartOf="@id/original"
+            app:layout_constraintEnd_toEndOf="@id/original"
+            app:layout_constraintTop_toBottomOf="@id/original"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="TODO"
+            android:autofillHints="" />
+
+        <Button
+            android:id="@+id/ok"
+            android:text="@string/add"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/button_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
